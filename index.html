@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinzhong - Heritage of Shanxi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#e2c8e2',
+        secondary: '#b790c4',
+        light: '#f8f1fb',
+        dark: '#3a3a3a'
+      }
+    }
+  }
+}
+</script>
+
+<!-- 完整CSS样式 -->
+<style type="text/css">
+  html { scroll-behavior: smooth; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes slideUp { from { opacity: 0; } to { opacity: 1; } }
+  .hover-scale { transition: transform 0.3s ease; }
+  .hover-scale:hover { transform: scale(1.05); }
+  .btn-hover { transition: all 0.3s ease; }
+  .btn-hover:hover { box-shadow: 0 4px 12px rgba(183, 144, 196, 0.4); transform: translateY(-2px); }
+  .fade-in { animation: fadeIn 1s ease-in-out; }
+  .slide-up { animation: slideUp 0.8s ease-out; }
+  nav { transition: all 0.3s ease; }
+  .nav-scroll { background-color: rgba(255, 255, 255, 0.95) !important; box-shadow: 0 2px 10px rgba(226, 200, 226, 0.3) !important; }
+</style>
+
+<!-- 导航栏滚动JS -->
+<script>
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) { nav.classList.add('nav-scroll'); }
+    else { nav.classList.remove('nav-scroll'); }
+  });
+</script>
+</head>
+<body class="bg-light text-dark">
+
+<!-- Navbar（加了hover-scale类） -->
+<nav class="sticky top-0 bg-white/90 shadow-sm py-4 px-6">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="text-xl font-semibold text-secondary hover-scale">JINZHONG</a>
+    <div class="flex gap-6">
+      <a href="index.html" class="text-secondary font-medium hover-scale">HOME</a>
+      <a href="attractions.html" class="hover:text-secondary hover-scale">ATTRACTIONS</a>
+      <a href="food.html" class="hover:text-secondary hover-scale">FOOD</a>
+      <a href="culture.html" class="hover:text-secondary hover-scale">CULTURE</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero（加了fade-in/slide-up动画） -->
+<section class="h-[85vh] flex items-center justify-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-primary/40"></div>
+  <div class="absolute inset-0">
+    <img src="image/home.png" class="w-full h-full object-cover opacity-85">
+  </div>
+  <div class="relative z-10 text-center px-6 max-w-3xl">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 fade-in">Welcome to Jinzhong</h1>
+    <p class="text-white text-lg mb-8 fade-in" style="animation-delay: 0.2s">
+      Discover the timeless charm of Shanxi's historic heartland, home to UNESCO sites and ancient merchant heritage.
+    </p>
+    <a href="attractions.html" class="bg-secondary text-white px-6 py-3 rounded inline-block hover:bg-secondary/80 btn-hover fade-in" style="animation-delay: 0.4s">
+      Explore Attractions <i class="fa fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-secondary text-white py-8 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <p>&copy; 2026 Jinzhong Tourism · All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>
