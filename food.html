@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X21S2B4P2Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X21S2B4P2Q');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Food - Jinzhong</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<!-- 引入精致无衬线字体 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#f0e6f2',
+        secondary: '#b790c4',
+        light: '#f8f1fb',
+        dark: '#4a4a4a'
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<!-- 美食页专属CSS：图片旋转+文字渐显+淡雅背景 -->
+<style type="text/css">
+  html { 
+    scroll-behavior: smooth; 
+    font-family: 'Inter', sans-serif;
+  }
+  /* 导航栏样式 */
+  nav { transition: all 0.3s ease; }
+  .nav-scroll { background-color: rgba(255, 255, 255, 0.95) !important; box-shadow: 0 2px 10px rgba(226, 200, 226, 0.3) !important; }
+  .hover-scale { transition: transform 0.3s ease; }
+  .hover-scale:hover { transform: scale(1.05); }
+  /* 淡美背景：与文化页风格统一 */
+  .food-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #faf7fb;
+    padding: 4rem 0;
+  }
+  .food-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(120deg, rgba(226, 200, 226, 0.08), rgba(183, 144, 196, 0.05), rgba(226, 200, 226, 0.08)),
+      url("https://picsum.photos/id/175/1920/1080") center/cover no-repeat;
+    background-blend-mode: overlay;
+    opacity: 0.25;
+    z-index: 0;
+    animation: subtleMove 25s ease-in-out infinite alternate;
+  }
+  /* 背景微妙移动 */
+  @keyframes subtleMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  /* 美食卡片动效 */
+  .food-card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(183, 144, 196, 0.1); /* 细边框增加精致感 */
+  }
+  .food-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(183, 144, 196, 0.15);
+  }
+  .food-img {
+    transition: all 0.6s ease;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    height: 180px; /* 固定图片高度 */
+    object-fit: cover;
+  }
+  .food-card:hover .food-img {
+    transform: rotate(2deg) scale(1.03);
+    border-color: #b790c4;
+    box-shadow: 0 0 15px rgba(183, 144, 196, 0.3);
+  }
+  /* 文字渐显动画：从左到右 */
+  .text-reveal {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+  }
+  .food-card:hover .text-reveal {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* 标题悬浮动效 */
+  .food-title {
+    position: relative;
+    display: inline-block;
+    color: #b790c4;
+    font-weight: 600;
+  }
+  .food-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #b790c4;
+    transition: width 0.4s ease;
+  }
+  .food-card:hover .food-title::after {
+    width: 100%;
+  }
+  /* 文字样式 */
+  p {
+    color: #4a4a4a;
+    line-height: 1.7;
+  }
+</style>
+<!-- 导航栏滚动JS -->
+<script>
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('nav-scroll', window.scrollY > 50);
+  });
+</script>
+</head>
+<body class="bg-light text-dark">
+<nav class="sticky top-0 bg-white/90 shadow-sm py-4 px-6">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="text-xl font-semibold text-secondary hover-scale">JINZHONG</a>
+    <div class="flex gap-6">
+      <a href="index.html" class="hover:text-secondary hover-scale">HOME</a>
+      <a href="attractions.html" class="hover:text-secondary hover-scale">ATTRACTIONS</a>
+      <a href="food.html" class="text-secondary font-medium hover-scale">FOOD</a>
+      <a href="culture.html" class="hover:text-secondary hover-scale">CULTURE</a>
+    </div>
+  </div>
+</nav>
+<section class="food-container">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center text-secondary">Local Flavors</h2>
+    <div class="space-y-8">
+      <!-- 平遥牛肉 -->
+      <div class="food-card p-6 rounded-xl shadow flex flex-col md:flex-row gap-6 items-center">
+        <img src="image/beef.jpg" class="w-full md:w-1/3 food-img">
+        <div>
+          <h3 class="text-xl font-bold mb-2 food-title">Pingyao Beef</h3>
+          <p class="text-reveal">Tender, fragrant, and traditionally processed. It’s one of Jinzhong’s most famous specialties with a history of hundreds of years.</p>
+        </div>
+      </div>
+      <!-- 太谷饼 -->
+      <div class="food-card p-6 rounded-xl shadow flex flex-col md:flex-row gap-6 items-center">
+        <img src="image/taigu.png" class="w-full md:w-1/3 food-img">
+        <div>
+          <h3 class="text-xl font-bold mb-2 food-title">Taigu Cake</h3>
+          <p class="text-reveal">Sweet, soft, and fragrant traditional pastry covered with sesame seeds, a well-known Shanxi snack loved by all ages.</p>
+        </div>
+      </div>
+      <!-- 刀削面 -->
+      <div class="food-card p-6 rounded-xl shadow flex flex-col md:flex-row gap-6 items-center">
+        <img src="image/noodle.png" class="w-full md:w-1/3 food-img">
+        <div>
+          <h3 class="text-xl font-bold mb-2 food-title">Shanxi Daoxiao Noodles</h3>
+          <p class="text-reveal">Hand-sliced noodles with chewy texture, served in savory broth with various toppings, a classic staple of northern Chinese cuisine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="bg-secondary text-white py-8 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <p>&copy; 2026 Jinzhong Tourism · All Rights Reserved</p>
+  </div>
+</footer>
+</body>
+</html>
