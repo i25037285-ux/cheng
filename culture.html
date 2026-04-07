@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X21S2B4P2Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X21S2B4P2Q');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culture - Jinzhong</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<!-- 引入精致无衬线字体（比默认字体更优雅） -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#f0e6f2', // 更淡的粉紫色背景
+        secondary: '#b790c4', // 主色调保留
+        accent: '#d8b9e3', // 点缀色
+        dark: '#4a4a4a', // 深灰色文字（更柔和）
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'], // 精致字体
+      }
+    }
+  }
+}
+</script>
+
+<!-- 文化页全新CSS：淡美背景+卷轴滚动+精致排版 -->
+<style type="text/css">
+  html { 
+    scroll-behavior: smooth; 
+    font-family: 'Inter', sans-serif; /* 全局应用精致字体 */
+  }
+
+  /* 导航栏样式 */
+  nav { transition: all 0.3s ease; }
+  .nav-scroll { 
+    background-color: rgba(255, 255, 255, 0.98) !important; 
+    box-shadow: 0 2px 12px rgba(183, 144, 196, 0.15) !important; 
+  }
+  .hover-scale { transition: transform 0.3s ease; }
+  .hover-scale:hover { transform: scale(1.05); }
+
+  /* 淡美背景：纹理+渐变（新颖不突兀） */
+  .culture-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #faf7fb; /* 底色更淡 */
+    padding: 4rem 0;
+  }
+  .culture-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 淡色纹理+缓慢渐变，比纯渐变更有质感 */
+    background: 
+      linear-gradient(120deg, rgba(226, 200, 226, 0.08), rgba(183, 144, 196, 0.05), rgba(226, 200, 226, 0.08)),
+      url("https://picsum.photos/id/175/1920/1080") center/cover no-repeat;
+    background-blend-mode: overlay;
+    opacity: 0.25; /* 背景透明度降低，更淡 */
+    z-index: 0;
+    animation: subtleMove 25s ease-in-out infinite alternate;
+  }
+
+  /* 内容卡片：悬浮抬升+柔和阴影 */
+  .culture-card {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1.25rem; /* 圆角更精致 */
+    box-shadow: 0 8px 24px rgba(183, 144, 196, 0.08);
+    transition: all 0.6s ease;
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(183, 144, 196, 0.1); /* 细边框增加精致感 */
+  }
+  .culture-card:hover {
+    box-shadow: 0 12px 32px rgba(183, 144, 196, 0.12);
+    transform: translateY(-6px);
+  }
+
+  /* 卷轴式滚动渐显：每个板块依次出现（新颖动效） */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 标题样式：精致下划线+淡色点缀 */
+  .section-title {
+    position: relative;
+    display: inline-block;
+    color: #b790c4;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #b790c4, #d8b9e3);
+    border-radius: 1px;
+  }
+
+  /* 段落样式：行高更舒适，文字更柔和 */
+  .culture-text {
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+
+  /* 引用块：突出重点，增加设计感 */
+  .culture-quote {
+    border-left: 3px solid #d8b9e3;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  /* 列表样式：精致图标替代默认圆点 */
+  .culture-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding-left: 0;
+  }
+  .culture-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #555;
+  }
+  .culture-list li::before {
+    content: '•';
+    color: #b790c4;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-right: 0.8rem;
+  }
+
+  /* 背景微妙移动：增加呼吸感 */
+  @keyframes subtleMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+
+  /* 响应式调整：移动端更友好 */
+  @media (max-width: 768px) {
+    .culture-card {
+      padding: 2rem 1.5rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<!-- 导航栏滚动+滚动渐显JS -->
+<script>
+  // 导航栏滚动
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('nav-scroll', window.scrollY > 50);
+  });
+
+  // 卷轴式滚动渐显（每个板块依次出现）
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+</head>
+<body class="bg-primary text-dark">
+
+<!-- 导航栏 -->
+<nav class="sticky top-0 bg-white/95 shadow-sm py-4 px-6">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="text-xl font-semibold text-secondary hover-scale">JINZHONG</a>
+    <div class="flex gap-6">
+      <a href="index.html" class="hover:text-secondary hover-scale">HOME</a>
+      <a href="attractions.html" class="hover:text-secondary hover-scale">ATTRACTIONS</a>
+      <a href="food.html" class="hover:text-secondary hover-scale">FOOD</a>
+      <a href="culture.html" class="text-secondary font-medium hover-scale">CULTURE</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 主体内容：更长更丰富，分板块呈现 -->
+<section class="culture-container">
+  <div class="container mx-auto px-6">
+    <!-- 标题板块 -->
+    <div class="text-center mb-12 scroll-reveal">
+      <h2 class="text-4xl font-bold text-secondary mb-4">The Legacy of Jin Merchants</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Centuries of trade, trust, and cultural heritage shaped in the heart of Shanxi</p>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="culture-card">
+      <!-- 板块1：晋商起源 -->
+      <div class="scroll-reveal" style="transition-delay: 0.1s">
+        <h3 class="text-2xl section-title">Origins & Rise</h3>
+        <p class="culture-text">
+          Jinzhong, nestled in the central part of Shanxi Province, is widely recognized as the birthplace of the Jin merchants—one of China's most influential commercial groups in history. Their story began in the early Ming Dynasty (1368-1644), when strict border policies prompted local merchants to engage in trade with nomadic tribes along the northern frontier.
+        </p>
+        <p class="culture-text">
+          Starting with small-scale transactions of tea, silk, and grain, the Jin merchants gradually expanded their business networks across the entire country. By the Qing Dynasty (1644-1912), they had established a dominant presence in China's financial and trade sectors, even founding the earliest banks ("piaohao") that functioned as the country's first national banking system.
+        </p>
+        <div class="culture-quote">
+          "The Jin merchants built an empire of trust, where a handshake was worth more than a contract, and their reputation for integrity spread farther than their caravans."
+        </div>
+      </div>
+
+      <!-- 板块2：商业哲学 -->
+      <div class="scroll-reveal" style="transition-delay: 0.2s; margin-top: 3rem">
+        <h3 class="text-2xl section-title">Business Philosophy</h3>
+        <p class="culture-text">
+          What set the Jin merchants apart was their unique combination of commercial acumen and moral principles. Their success was built on three core values that guided every aspect of their operations:
+        </p>
+        <ul class="culture-list">
+          <li><strong>Integrity First</strong>: They believed that honesty was the foundation of long-term business, refusing to cut corners or deceive customers.</li>
+          <li><strong>Diligence & Frugality</strong>: Despite their wealth, Jin merchants maintained simple lifestyles and emphasized hard work as a virtue.</li>
+          <li><strong>Harmony & Cooperation</strong>: They valued teamwork and established elaborate guild systems to support each other in distant markets.</li>
+        </ul>
+        <p class="culture-text">
+          These principles not only ensured their commercial success but also earned them widespread respect across China. Many Jin merchant families maintained their prosperity for generations, passing down both their wealth and their ethical standards.
+        </p>
+      </div>
+
+      <!-- 板块3：文化遗产 -->
+      <div class="scroll-reveal" style="transition-delay: 0.3s; margin-top: 3rem">
+        <h3 class="text-2xl section-title">Cultural Heritage</h3>
+        <p class="culture-text">
+          The legacy of the Jin merchants is most vividly preserved in Jinzhong's architectural treasures. The region is dotted with grand courtyard mansions ("jia yuan") that served as both residences and business headquarters for wealthy merchant families.
+        </p>
+        <p class="culture-text">
+          These courtyards, such as the Qiao Family Courtyard, Wang Family Courtyard, and Qu Family Courtyard, are masterpieces of traditional Chinese architecture. They feature intricate brick carvings, wood carvings, and stone carvings that depict scenes from Chinese mythology, history, and daily life—each detail reflecting the merchants' status, taste, and cultural values.
+        </p>
+        <p class="culture-text">
+          Beyond architecture, the Jin merchants' influence can be seen in local customs, crafts, and even cuisine. Many traditional Shanxi snacks and dishes have their roots in the food prepared for merchant caravans, which needed to be portable, durable, and nutritious for long journeys.
+        </p>
+      </div>
+
+      <!-- 板块4：现代传承 -->
+      <div class="scroll-reveal" style="transition-delay: 0.4s; margin-top: 3rem">
+        <h3 class="text-2xl section-title">Modern Legacy</h3>
+        <p class="culture-text">
+          While the era of the Jin merchants has passed, their spirit continues to thrive in Jinzhong and beyond. Pingyao Ancient City, a UNESCO World Heritage Site, stands as a living museum of their history, with well-preserved banks, shops, and residences that offer a glimpse into the golden age of Chinese commerce.
+        </p>
+        <p class="culture-text">
+          Today, the values of integrity, diligence, and innovation that defined the Jin merchants inspire modern entrepreneurs and businesses. Jinzhong has embraced its heritage while developing new industries, creating a unique blend of tradition and modernity that attracts visitors from around the world.
+        </p>
+        <p class="culture-text">
+          For travelers, exploring Jinzhong's cultural heritage is not just a journey through history—it's an opportunity to discover the timeless wisdom that made the Jin merchants one of China's most remarkable commercial forces.
+        </p>
+      </div>
+    </div>
+
+    <!-- 底部装饰：增加设计感 -->
+    <div class="text-center mt-12 scroll-reveal">
+      <i class="fa fa-bookmark text-secondary/50 text-3xl"></i>
+      <p class="text-gray-500 mt-4">Preserving 500 Years of Commercial & Cultural Excellence</p>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-secondary text-white py-8 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <p>&copy; 2026 Jinzhong Tourism · All Rights Reserved</p>
+  </div>
+</footer>
+
+&lt;!-- Google tag (gtag.js) --&gt;  &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-X21S2B4P2Q"&gt;&lt;/script&gt;  &lt;script&gt;    window.dataLayer = window.dataLayer || [];    function gtag(){dataLayer.push(arguments);}    gtag('js', new Date());      gtag('config', 'G-X21S2B4P2Q');  &lt;/script&gt;
+</body>
+</html>
