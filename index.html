@@ -10,88 +10,73 @@
 
   gtag('config', 'G-X21S2B4P2Q');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X21S2B4P2Q"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-X21S2B4P2Q');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jinzhong - Heritage of Shanxi</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#e2c8e2',
-        secondary: '#b790c4',
-        light: '#f8f1fb',
-        dark: '#3a3a3a'
-      }
-    }
-  }
+tailwind.config={theme:{extend:{colors:{primary:'#f8f1fb',secondary:'#b790c4',light:'#f8f1fb',dark:'#3a3a3a'},fontFamily:{inter:['Inter','sans-serif']}}}}
+</script>
+<style>
+@font-face {
+  font-family: 'Segoe Script';
+  src: local('Segoe Script'), local('SegoeScript');
+  font-weight: normal;
+  font-style: normal;
 }
-</script>
-
-<!-- 完整CSS样式 -->
-<style type="text/css">
-  html { scroll-behavior: smooth; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes slideUp { from { opacity: 0; } to { opacity: 1; } }
-  .hover-scale { transition: transform 0.3s ease; }
-  .hover-scale:hover { transform: scale(1.05); }
-  .btn-hover { transition: all 0.3s ease; }
-  .btn-hover:hover { box-shadow: 0 4px 12px rgba(183, 144, 196, 0.4); transform: translateY(-2px); }
-  .fade-in { animation: fadeIn 1s ease-in-out; }
-  .slide-up { animation: slideUp 0.8s ease-out; }
-  nav { transition: all 0.3s ease; }
-  .nav-scroll { background-color: rgba(255, 255, 255, 0.95) !important; box-shadow: 0 2px 10px rgba(226, 200, 226, 0.3) !important; }
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#f8f1fb}
+nav{transition:all .3s ease;background:white;padding:16px 30px;position:sticky;top:0;z-index:999}
+.nav-scroll{background:white!important;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+nav a{text-decoration:none;padding:10px 16px;font-weight:500;border-radius:10px;transition:all .3s ease;color:#333}
+nav a.active{background:#f3e8ff;color:#b790c4}
+nav a:hover{background:#f3e8ff;color:#b790c4}
+.hover-scale{transition:transform .3s ease}
+.hover-scale:hover{transform:scale(1.05)}
+.cursive-title{font-family:'Segoe Script',cursive;letter-spacing:1px;color:#b790c4}
+.hero{height:85vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.3);z-index:1}
+.hero-bg{position:absolute;inset:0;background:url('image/home.png') center/cover no-repeat}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:0 30px}
+.hero h1{font-size:56px;color:#fff;margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.hero .subtitle{font-family:'Segoe Script',cursive;font-size:28px;color:#f0e6f2;margin-bottom:30px;opacity:0.95}
+.btn-primary{display:inline-block;padding:14px 32px;background:linear-gradient(90deg,#b790c4,#a78bfa);color:white;border-radius:12px;text-decoration:none;font-weight:500;transition:all .3s ease;box-shadow:0 8px 20px rgba(183,144,196,0.3)}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(183,144,196,0.4)}
+footer{background:#b790c4;color:white;padding:30px;text-align:center}
 </style>
-
-<!-- 导航栏滚动JS -->
-<script>
-  window.addEventListener('scroll', function() {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) { nav.classList.add('nav-scroll'); }
-    else { nav.classList.remove('nav-scroll'); }
-  });
-</script>
 </head>
 <body class="bg-light text-dark">
-
-<!-- Navbar（加了hover-scale类） -->
-<nav class="sticky top-0 bg-white/90 shadow-sm py-4 px-6">
+<nav>
   <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <a href="index.html" class="text-xl font-semibold text-secondary hover-scale">JINZHONG</a>
+    <a href="index.html" class="text-2xl font-bold cursive-title">Jinzhong</a>
     <div class="flex gap-6">
-      <a href="index.html" class="text-secondary font-medium hover-scale">HOME</a>
-      <a href="attractions.html" class="hover:text-secondary hover-scale">ATTRACTIONS</a>
-      <a href="food.html" class="hover:text-secondary hover-scale">FOOD</a>
-      <a href="culture.html" class="hover:text-secondary hover-scale">CULTURE</a>
+      <a href="index.html" class="active hover-scale">HOME</a>
+      <a href="attractions.html" class="hover-scale">ATTRACTIONS</a>
+      <a href="food.html" class="hover-scale">FOOD</a>
+      <a href="culture.html" class="hover-scale">CULTURE</a>
     </div>
   </div>
 </nav>
 
-<!-- Hero（加了fade-in/slide-up动画） -->
-<section class="h-[85vh] flex items-center justify-center relative overflow-hidden">
-  <div class="absolute inset-0 bg-primary/40"></div>
-  <div class="absolute inset-0">
-    <img src="image/home.png" class="w-full h-full object-cover opacity-85">
-  </div>
-  <div class="relative z-10 text-center px-6 max-w-3xl">
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 fade-in">Welcome to Jinzhong</h1>
-    <p class="text-white text-lg mb-8 fade-in" style="animation-delay: 0.2s">
-      Discover the timeless charm of Shanxi's historic heartland, home to UNESCO sites and ancient merchant heritage.
-    </p>
-    <a href="attractions.html" class="bg-secondary text-white px-6 py-3 rounded inline-block hover:bg-secondary/80 btn-hover fade-in" style="animation-delay: 0.4s">
-      Explore Attractions <i class="fa fa-arrow-right ml-2"></i>
-    </a>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Welcome to Jinzhong</h1>
+    <p class="subtitle">Discover the timeless charm of Shanxi's historic heartland, home to UNESCO sites and ancient merchant heritage.</p>
+    <a href="attractions.html" class="btn-primary">Explore Now <i class="fa fa-arrow-right ml-2"></i></a>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-secondary text-white py-8 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <p>&copy; 2026 Jinzhong Tourism · All Rights Reserved</p>
-  </div>
+<footer>
+  <p>&copy; 2025 Jinzhong Hometown Website</p>
 </footer>
 
+<script>
+window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('nav-scroll',window.scrollY>50)})
+</script>
 </body>
 </html>
